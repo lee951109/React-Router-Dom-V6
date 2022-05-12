@@ -1,7 +1,8 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import About from './pages/About';
+import NotFound from './pages/NotFound';
 
 
 function App() {
@@ -9,24 +10,29 @@ function App() {
 
   // React-Route-Dom V5
   // <BrowserRouter>
-  //   <switch>
-  //     <Route path="/" component={ Home } />
-  //     <Route path="/profile" component={ Profile } />
-  //     <Route path="/profile/:id" component={ Profile } />
-  //     <Route path="/about" component={ About } />
-  //   </switch>
+  //  <Link to="/">Home</Link>
+  //  <switch>
+  //    <Route path="/profile/:id" component={ Profile } />
+  //    <Route path="/profile" component={ Profile } />
+  //    <Route path="/about" component={ About } />
+  //    <Route path="/" exact component={ Home } />
+  //    <Route component={NotFound} />
+  //  </switch>
   // </BrowserRouter>
 
 
   //React-Route-Dom V6
    <BrowserRouter>
-     <Routes>
+   <Link to="/">Home</Link>
+    <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/profile" element={<Profile />} >
         <Route path=":id" element={<Profile />} />
       </Route>
       <Route path="/about" element={<About />} />
-     </Routes>
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+     
    </BrowserRouter>
   );
 }
