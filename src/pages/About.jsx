@@ -27,7 +27,7 @@ export default function About() {
 // query-string을 사용해서 key값을 바로 가져올 수 있다.
 	const query = queryString.parse(searchParams);
 	console.log(query); // {name : value}
-	
+
 	return (
 		<div>
 			<h2>About 페이지입니다.</h2>

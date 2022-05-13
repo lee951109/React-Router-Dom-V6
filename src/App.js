@@ -3,6 +3,8 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
+import Links from './components/Links';
+import NavLinks from './components/NavLinks';
 
 
 function App() {
@@ -23,7 +25,8 @@ function App() {
 
   //React-Route-Dom V6
    <BrowserRouter>
-   <Link to="/">Home</Link>
+   <Links />
+   <NavLinks />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/profile" element={<Profile />} >
