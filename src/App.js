@@ -1,4 +1,4 @@
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import About from './pages/About';
@@ -7,6 +7,8 @@ import NotFound from './pages/NotFound';
 import Links from './components/Links';
 import NavLinks from './components/NavLinks';
 
+
+const isLogin = true;
 
 function App() {
   return (
@@ -19,6 +21,9 @@ function App() {
   //    <Route path="/profile" component={ Profile } />
   //    <Route path="/about" component={ About } />
   //    <Route path="/" exact component={ Home } />
+  //    <Route path="/login" 
+  //       render={() =>
+  //       (isLogin ? <Redirect to="/" /> : <Login />)} />
   //    <Route component={NotFound} />
   //  </switch>
   // </BrowserRouter>
@@ -34,7 +39,8 @@ function App() {
         <Route path=":id" element={<Profile />} />
       </Route>
       <Route path="/about" element={<About />} />
-      <Route path="/login" element={<Login />} />
+      <Route path="/login" 
+        element={(isLogin ? <Navigate to="/" /> : <Login />)} />
       <Route path="*" element={<NotFound />} />
     </Routes>
      

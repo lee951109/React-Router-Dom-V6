@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import LoginButton from "../components/LoginButton";
 
 export default function Login() {
