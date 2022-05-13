@@ -2,6 +2,7 @@ import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import About from './pages/About';
+import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import Links from './components/Links';
 import NavLinks from './components/NavLinks';
@@ -33,6 +34,7 @@ function App() {
         <Route path=":id" element={<Profile />} />
       </Route>
       <Route path="/about" element={<About />} />
+      <Route path="/login" element={<Login />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
      
